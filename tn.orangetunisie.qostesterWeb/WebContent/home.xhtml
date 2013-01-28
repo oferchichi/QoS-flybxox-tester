@@ -16,7 +16,6 @@ function exportChart() {
     //export image  
     $('#output').empty().append(chart.exportAsImage());  
   
-    //show t11111111he dialog  
     dlg.show();  
 } 
 </script>		
@@ -66,8 +65,9 @@ function exportChart() {
 							Variation du débit Http pour les dernieres 24h  :
 						</legend>
 						<h:form id="debit" >
-						 <p:lineChart id="linear" value="#{chartCtrl.linearModel}" legendPosition="e"  
-     title="Débit" minY="0" maxY="10" zoom="true" widgetVar="chart"/>  
+						<p:poll interval="10" update="linear" />  
+						 <p:lineChart id="linear" value="#{chartAllBean.linearModel}" legendPosition="e"  
+     title="Débit" minY="0" maxY="500" zoom="true" widgetVar="chart"/>  
 						<p:commandButton type="button" value="Export" icon="ui-icon-extlink" onclick="exportChart();"/>  
   
 <p:dialog widgetVar="dlg" showEffect="fade" modal="true" header="Chart :">  
