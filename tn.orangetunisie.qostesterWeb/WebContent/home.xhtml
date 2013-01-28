@@ -68,8 +68,8 @@ function exportChart() {
 						</legend>
 						<h:form id="debit" >
 						<p:poll interval="10" update="linear" />  
-						 <p:lineChart id="linear" value="#{chartAllBean.linearModel}" legendPosition="e"  
-     title="Débit" minY="0" maxY="500" zoom="true" widgetVar="chart"/>  
+						 <p:lineChart id="linear" value="#{chartAllBean.linearModel}" legendPosition="nw"  
+     title="Débit" minY="0" maxY="7000" yaxisLabel="Débit en Kbit/s" zoom="true" widgetVar="chart"  animate="true" stacked="true"/>  
 						<p:commandButton type="button" value="Export" icon="ui-icon-extlink" onclick="exportChart();"/>  
   
 <p:dialog widgetVar="dlg" showEffect="fade" modal="true" header="Chart :">  
