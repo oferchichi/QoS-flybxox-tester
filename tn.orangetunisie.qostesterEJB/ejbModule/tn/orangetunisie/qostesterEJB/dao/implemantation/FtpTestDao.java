@@ -20,7 +20,7 @@ import tn.orangetunisie.qostesterEJB.entities.FtpTest;
 public class FtpTestDao implements FtpTestDaoRemote, FtpTestDaoLocal   {
 
 	
-	@PersistenceContext(unitName="edu.qos.testEJB")
+	@PersistenceContext(unitName="tn.orangetunisie.qostesterEJB")
 	EntityManager entityManager ;
 	
     /**

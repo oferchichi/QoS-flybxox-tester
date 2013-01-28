@@ -16,7 +16,7 @@ import tn.orangetunisie.qostesterEJB.entities.User;
 @Stateless
 public class UserDao implements UserDaoRemote, UserDaoLocal {
 	
-	@PersistenceContext(unitName="")
+	@PersistenceContext(unitName="tn.orangetunisie.qostesterEJB")
 	EntityManager entityManager ;
 
     public UserDao() {
