@@ -45,7 +45,7 @@ public class ChartAllBean {
             for (FtpTest f: ftpTests){
             	if (f.getApn().equals("flybox")) {
             		System.out.println(f.getIdTest() + " - " + f.getApn() + " - "  +f.getValeur());
-            		String timeformat = new SimpleDateFormat("HH:mm").format(f.getTemps());
+            		String timeformat = new SimpleDateFormat("H:mm").format(f.getTemps());
             		series1.set(timeformat, f.getValeur());
             	}
             }
@@ -63,7 +63,7 @@ public class ChartAllBean {
         for (FtpTest f: ftpTests){
         	if (f.getApn().equals("flybox")) {
         		System.out.println(f.getIdTest() + " - " + f.getApn() + " - "  +f.getValeur());
-        		String timeformat = new SimpleDateFormat("HH:mm").format(f.getTemps());
+        		String timeformat = new SimpleDateFormat("H:mm").format(f.getTemps());
         		linearModel.getSeries().get(0).getData().put(timeformat, f.getValeur());
         	}
         }
