@@ -40,19 +40,21 @@ public class ChartAllBean {
     
 		
 			List<FtpTest> ftpTests = ftpTestDaoLocal.getAllTest(); 
-            LineChartSeries series1 = new LineChartSeries();  
-            series1.setLabel("Flybox");  
+            LineChartSeries seriesFlybox = new LineChartSeries();  
+            LineChartSeries seriesKeypro = new LineChartSeries();
+            LineChartSeries serieskeygp = new LineChartSeries();
+            seriesFlybox.setLabel("Flybox");  
             for (FtpTest f: ftpTests){
             	if (f.getApn().equals("flybox")) {
             		System.out.println(f.getIdTest() + " - " + f.getApn() + " - "  +f.getValeur());
             		String timeformat = new SimpleDateFormat("H:mm").format(f.getTemps());
-            		series1.set(timeformat, f.getValeur());
+            		seriesFlybox.set(timeformat, f.getValeur());
             	}
             }
            
 
    
-            linearModel.addSeries(series1);
+            linearModel.addSeries(seriesFlybox);
         
     }
 
