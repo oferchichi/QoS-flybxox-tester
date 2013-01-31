@@ -29,6 +29,7 @@ public class FtpTestDao implements FtpTestDaoRemote, FtpTestDaoLocal   {
     public FtpTestDao() {
     }
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<FtpTest> getAllTest() {
         
@@ -36,5 +37,21 @@ public class FtpTestDao implements FtpTestDaoRemote, FtpTestDaoLocal   {
 		return entityManager.createQuery("from FtpTest").getResultList();
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<FtpTest> getByday() {
+	
+		return 	entityManager.createQuery("from FtpTest ftp where ftp.jour=curdate()").getResultList();
+	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<FtpTest> getBytime() {
+		
+      return 	entityManager.createQuery("from FtpTest ftp where ftp.temps between '00:01:00' and '23:59:00' and ftp.jour=curdate()").getResultList();
+	}
+	
+	
+
+   
 }

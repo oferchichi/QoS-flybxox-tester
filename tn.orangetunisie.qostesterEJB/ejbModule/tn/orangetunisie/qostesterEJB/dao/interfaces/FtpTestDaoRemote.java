@@ -11,4 +11,9 @@ import tn.orangetunisie.qostesterEJB.entities.FtpTest;
 public interface FtpTestDaoRemote {
 
 	public List<FtpTest> getAllTest();
+	
+	public List<FtpTest> getByday() ;
+	
+	public List<FtpTest> getBytime();
+
 }

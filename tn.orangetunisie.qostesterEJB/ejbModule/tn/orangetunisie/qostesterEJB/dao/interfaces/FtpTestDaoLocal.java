@@ -13,4 +13,11 @@ public interface FtpTestDaoLocal {
 	
 	public List<FtpTest> getAllTest();
 	
+	public List<FtpTest> getByday() ;
+	
+	public List<FtpTest> getBytime();
+	
+	
+	
+	
 }

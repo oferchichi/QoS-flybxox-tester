@@ -61,13 +61,13 @@ function exportChart() {
 </aside>
 <section>
 <div class="info-post">
-					
+					 
 					<fieldset>
 						<legend>
 							Variation du débit Http pour les dernieres 24h  :
 						</legend>
 						<h:form id="debit" >
-						<p:poll interval="10" update="linear" />  
+						<p:poll interval="3600" update="linear" />  
 						 <p:lineChart id="linear" value="#{chartAllBean.linearModel}" legendPosition="nw"  
      title="Débit" minY="0" maxY="7000" yaxisLabel="Débit en Kbit/s" zoom="true" widgetVar="chart"  animate="true" stacked="true"/>  
 						<p:commandButton type="button" value="Export" icon="ui-icon-extlink" onclick="exportChart();"/>  
