@@ -57,73 +57,15 @@ public class ChartAllBean {
 			}
 
 		}
-/*
-		for (FtpTest f : ftpTimeTest) {
-			if (f.getApn().equals("keypro")) {
-				String timeformat = new SimpleDateFormat("HH:mm").format(f
-						.getTemps());
-				seriesKeypro.set(timeformat, f.getValeur());
-				System.out.println("keypro : " + f.getValeur());
-			}
-
-		}
-
-*/
-		/*
-		for (FtpTest f : ftpTimeTest) {
-			if (f.getApn().equals("keygp")) {
-
-				String timeformat = new SimpleDateFormat("HH:mm").format(f
-						.getTemps());
-				serieskeygp.set(timeformat, f.getValeur());
-				System.out.println("keypro : " + f.getValeur());
-			}
-		}
-*/
-		for (FtpTest f : ftpTimeTest) {
-			if (f.getApn().equals("weborange")) {
-				String timeformat = new SimpleDateFormat("HH:mm").format(f
-						.getTemps());
-				seriesweborange.set(timeformat, f.getValeur());
-				System.out.println("weborange : " + f.getValeur() + " - "
-						+ timeformat);
-			}
-
-		}
-/*
-		for (FtpTest f : ftpTimeTest) {
-			if (f.getApn().equals("blackbery")) {
-				String timeformat = new SimpleDateFormat("HH:mm").format(f
-						.getTemps());
-				seriesblackbery.set(timeformat, f.getValeur());
-				System.out.println("blackbery : " + f.getValeur());
-			}
-
-		}*/
 		
-		/*
-		for (FtpTest f : ftpTimeTest) {
-
-			if (f.getApn().equals("iphone")) {
-				String timeformat = new SimpleDateFormat("HH:mm").format(f
-						.getTemps());
-				seriesiphone.set(timeformat, f.getValeur());
-				System.out.println("iphone : " + f.getValeur());
-			}
-
-		}
-*/
+	
 		linearModel.addSeries(seriesFlybox);
-		//linearModel.addSeries(seriesKeypro);
-		/*
-		  linearModel.addSeries(serieskeygp);
-		  linearModel.addSeries(seriesiphone);
-		  */
-		  linearModel.addSeries(seriesweborange);
-		// linearModel.addSeries(seriesblackbery);
-		 
+		}
 
-	}
+	
+
+
+	
 
 	public CartesianChartModel getLinearModel() {
 		List<FtpTest> ftpTests = ftpTestDaoLocal.getBytime();

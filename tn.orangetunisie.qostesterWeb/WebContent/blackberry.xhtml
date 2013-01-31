@@ -1,0 +1,107 @@
+<!DOCTYPE html > 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" > 
+
+<h:head>
+<title>Qos 3G/ADSl</title>
+
+		<link rel="stylesheet" href="_css/style.css" type="text/css" />
+		<link rel="stylesheet" href="_css/style_desktop.css" type="text/css" />
+
+<script type="text/javascript">		  
+function exportChart() {  
+    //export image  
+    $('#output').empty().append(chart.exportAsImage());  
+  
+    dlg.show();  
+} 
+</script>		
+</h:head>
+<body>
+<f:view>
+<div id="wrapper">
+<header>
+<img src="_images/orange.jpg" alt="Orange Logo" />
+				<nav>
+					<ul>
+						<li>
+							<a href="index.xhtml">Acceuil</a>
+						</li>
+						<li>
+							<a href="propos.xhtml">A propos</a>
+						</li>
+						<li>
+							<a href="contact.xhtml">Contact</a>
+						</li>
+					</ul>
+				</nav>
+</header>
+<aside>
+<p:accordionPanel styleClass="tab" >
+	<p:tab title="3G APN">
+		<h:panelGrid columns="1" cellpadding="10">
+		 <p:commandLink value="Http"></p:commandLink>
+	     <p:commandLink value="Ftp"></p:commandLink>
+	     <p:commandLink value="Streaming"></p:commandLink>
+		</h:panelGrid>
+	</p:tab>
+	<p:tab title="Adsl " >
+		<h:panelGrid columns="1" cellpadding="10">
+		 <p:commandLink value="http"></p:commandLink>
+	     <p:commandLink value="Ftp"></p:commandLink>
+	     <p:commandLink value="Streaming"></p:commandLink>
+	     		</h:panelGrid>
+	</p:tab>
+	
+</p:accordionPanel>
+				
+</aside>
+<section>
+<div class="info-post">
+					 
+					<fieldset>
+						<legend>
+							Variation du débit Ftp pour les dernieres 24h  :
+						</legend>
+						<h:form id="debit" >
+						<p:poll interval="3600" update="linear" />  
+						 <p:lineChart id="linear" value="#{blackBerryChartBean.linearModel}" legendPosition="nw"  
+     title="Débit" minY="0" maxY="7000" yaxisLabel="Débit en Kbit/s" zoom="true" widgetVar="chart"  animate="true" stacked="true"/>  
+						<p:commandButton type="button" value="Export" icon="ui-icon-extlink" onclick="exportChart();"/>  
+  
+<p:dialog widgetVar="dlg" showEffect="fade" modal="true" header="Chart :">  
+    <p:outputPanel id="output" layout="block" style="width:500px;height:300px"/>  
+</p:dialog>  
+
+
+						</h:form>
+		 	</fieldset> 
+				</div>	
+</section>
+<footer>
+<ul>
+					<li>
+						<a href="index.html">Acceuil</a>
+					</li>
+					<li>
+						<a href="propos.html">A propos</a>
+					</li>
+					<li>
+						<a href="contact.html">Contact</a>
+					</li>
+				</ul>
+				<p>
+					 <a href="http://www.orange.tn">Orange Tunisie</a>	
+			   </p>
+				<div class="clear">
+
+				</div>
+
+</footer>
+</div>
+</f:view>
+</body> 
+</html>
